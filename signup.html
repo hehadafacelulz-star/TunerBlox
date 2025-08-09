@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>TunerBLOX — Sign Up</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="topbar">
+    <div class="brand"><div class="logo">TunerBLOX</div></div>
+    <nav class="nav">
+      <a href="index.html" class="nav-link">Home</a>
+      <a href="games.html" class="nav-link">Games</a>
+      <a href="users.html" class="nav-link">Users</a>
+      <a href="forums.html" class="nav-link">Forums</a>
+      <a href="signup.html" class="nav-link active">Sign Up</a>
+    </nav>
+  </header>
+
+  <main class="container singlecol">
+    <section class="box full-list">
+      <h1>Create Account</h1>
+
+      <div id="signup-block">
+        <p>Signups are restricted. Only the admin <strong>ROBLOX</strong> may create accounts from this page.</p>
+        <p>Admin: append <code>?admin=ROBLOX</code> to the URL to enable the form for testing.</p>
+
+        <form id="signup-form" style="display:none;">
+          <label>Username</label>
+          <input id="su-user" required>
+          <label>Password</label>
+          <input id="su-pass" type="password" required>
+          <label>Confirm Password</label>
+          <input id="su-pass2" type="password" required>
+          <button class="btn" type="submit">Create Account</button>
+        </form>
+      </div>
+
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div>© <span id="year5"></span> TunerBLOX. Inspired by Roblox (2008).</div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
+
