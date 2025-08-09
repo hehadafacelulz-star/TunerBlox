@@ -1,130 +1,39 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TunerBLOX — Games</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link active">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-    <div class="search-wrap"><input placeholder="Search places..." id="games-search"></div>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand"><img src="assets/logo.png" class="logo-img" alt="TunerBLOX"></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="games.html" class="active">Games</a>
+        <a href="users.html">People</a>
+        <a href="forums.html">Forum</a>
+        <a href="login.html" id="login-top" class="login-toggle">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>All Places</h1>
-      <div id="all-places" class="places-list">
-        <!-- Filled by script.js -->
+  <main class="container single">
+    <section class="box wide">
+      <h1>Games</h1>
+      <div class="games-controls">
+        <input id="games-search" placeholder="Search places...">
       </div>
+      <div id="all-places" class="grid-list"></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div>© <span id="year2"></span> TunerBLOX. Inspired by Roblox (2008).</div>
+  <footer class="site-footer">
+    <div>© <span id="year2"></span> TunerBLOX</div>
   </footer>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-<!-- FILE: users.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Users</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link active">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-    <div class="search-wrap"><input placeholder="Search users..." id="users-search"></div>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>Players</h1>
-      <p>This directory is a placeholder — hook up your backend to populate actual player accounts.</p>
-      <div id="user-list" class="user-grid">
-        <!-- Filled by script.js -->
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year3"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: forums.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Forums</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link active">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>Forums</h1>
-      <p>Classic forum layout (placeholder). Replace with your forum engine or link to external service.</p>
-      <div class="forum-list">
-        <div class="forum-thread box">
-          <h3>Announcements</h3>
-          <p>Official news &amp; updates from admins.</p>
-        </div>
-        <div class="forum-thread box">
-          <h3>General Chat</h3>
-          <p>Meet other tuners, plan builds, and swap parts.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year4"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-const sampleGames = [
-  { name: "Brick Battle Arena", creator: "ROBLOX", thumbnail: "assets/brickbattle.png", visits: 1234 },
-  { name: "Classic Obby", creator: "Builderman", thumbnail: "assets/obby.png", visits: 950 },
-  { name: "Happy Home in Robloxia", creator: "ROBLOX", thumbnail: "assets/happyhome.png", visits: 1450 }
-];
