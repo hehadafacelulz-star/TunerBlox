@@ -1,15 +1,3 @@
-<!--
-Project: TunerBLOX — 2008-inspired Roblox revival front-end
-Files included below. Copy each section into a file with the filename shown.
-
-Deployment: push files to a GitHub repo and enable GitHub Pages on the main branch (or gh-pages).
-
-Notes:
-- The signup page is intentionally disabled for everyone except admin. For local testing use the URL parameter `?admin=ROBLOX` to enable the form (replace with real auth check when you have a backend).
-- Replace placeholder thumbnails and logo in /assets/ and update API endpoints in script.js when you add a backend.
--->
-
-<!-- FILE: index.html -->
 <!doctype html>
 <html lang="en">
 <head>
@@ -19,361 +7,61 @@ Notes:
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand">
-      <div class="logo">TunerBLOX</div>
-    </div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-    <div class="search-wrap">
-      <input placeholder="Search players, places..." id="global-search">
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand"><img src="assets/logo.png" alt="TunerBLOX" class="logo-img"></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="users.html">People</a>
+        <a href="forums.html">Forum</a>
+        <a href="login.html" id="login-top" class="login-toggle">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
     </div>
   </header>
 
-  <main class="container">
-    <aside class="leftcol">
-      <section class="box news">
-        <h2>News</h2>
-        <div id="news-list">
-          <!-- Filled by script.js -->
-        </div>
-      </section>
-
-      <section class="box featured">
-        <h2>Featured Places</h2>
-        <div id="featured-list" class="grid-places">
-          <!-- Filled by script.js -->
-        </div>
-      </section>
-    </aside>
-
-    <section class="maincol">
-      <div class="box welcome">
-        <h1>Welcome to TunerBLOX</h1>
-        <p>Reviving the classic Roblox 2008 vibe — play retro-style places, meet friends, and build cars & tuners.</p>
-      </div>
-
-      <div class="box games-preview">
-        <h2>Popular This Week</h2>
-        <div id="games-list" class="grid-places">
-          <!-- Filled by script.js -->
-        </div>
-      </div>
-
-      <div class="box community-note">
-        <h3>Community</h3>
-        <p>Check the <a href="forums.html">forums</a> for events, giveaways, and community builds.</p>
-      </div>
-    </section>
-
-    <aside class="rightcol">
-      <div class="box login-box">
+  <div class="hero">
+    <div class="hero-left">
+      <div class="login-box small">
         <h3>Member Login</h3>
         <form id="login-form">
           <label>Username</label>
-          <input id="login-user" required>
+          <input id="login-user" />
           <label>Password</label>
-          <input id="login-pass" type="password" required>
-          <button class="btn" type="submit">Login</button>
+          <input id="login-pass" type="password" />
+          <button class="btn">Login</button>
         </form>
       </div>
 
-      <div class="box stats">
-        <h3>Server Status</h3>
-        <p>Players online: <span id="player-count">—</span></p>
-        <p>Places: <span id="place-count">—</span></p>
-      </div>
+      <section class="box news">
+        <h2>News</h2>
+        <div id="news-list"></div>
+      </section>
+    </div>
 
-      <div class="box about">
-        <h3>About TunerBLOX</h3>
-        <p>2008-inspired platform focused on tuner culture and car builds. Play, create, and share.</p>
-      </div>
-    </aside>
-  </main>
+    <div class="hero-right">
+      <section class="box featured">
+        <h2>Featured</h2>
+        <div id="featured-list" class="grid-tiles"></div>
+      </section>
 
-  <footer class="footer">
-    <div>© <span id="year"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
+      <section class="box stats">
+        <p>Players online: <strong id="player-count">—</strong></p>
+        <p>Places: <strong id="place-count">—</strong></p>
+      </section>
+    </div>
+  </div>
 
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: games.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Games</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link active">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-    <div class="search-wrap"><input placeholder="Search places..." id="games-search"></div>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>All Places</h1>
-      <div id="all-places" class="places-list">
-        <!-- Filled by script.js -->
-      </div>
+  <main class="container">
+    <section class="box wide">
+      <h2>Popular This Week</h2>
+      <div id="games-list" class="grid-tiles"></div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div>© <span id="year2"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: users.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Users</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link active">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-    <div class="search-wrap"><input placeholder="Search users..." id="users-search"></div>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>Players</h1>
-      <p>This directory is a placeholder — hook up your backend to populate actual player accounts.</p>
-      <div id="user-list" class="user-grid">
-        <!-- Filled by script.js -->
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year3"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: forums.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Forums</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link active">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>Forums</h1>
-      <p>Classic forum layout (placeholder). Replace with your forum engine or link to external service.</p>
-      <div class="forum-list">
-        <div class="forum-thread box">
-          <h3>Announcements</h3>
-          <p>Official news &amp; updates from admins.</p>
-        </div>
-        <div class="forum-thread box">
-          <h3>General Chat</h3>
-          <p>Meet other tuners, plan builds, and swap parts.</p>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year4"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: signup.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Sign Up</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link active">Sign Up</a>
-    </nav>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list">
-      <h1>Create Account</h1>
-
-      <div id="signup-block">
-        <p>Signups are restricted. Only the admin <strong>ROBLOX</strong> may create accounts from this page.</p>
-        <p>Admin: append <code>?admin=ROBLOX</code> to the URL to enable the form for testing.</p>
-
-        <form id="signup-form" style="display:none;">
-          <label>Username</label>
-          <input id="su-user" required>
-          <label>Password</label>
-          <input id="su-pass" type="password" required>
-          <label>Confirm Password</label>
-          <input id="su-pass2" type="password" required>
-          <button class="btn" type="submit">Create Account</button>
-        </form>
-      </div>
-
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year5"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: profile.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Profile</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list profile">
-      <div class="profile-header">
-        <div class="avatar big">AV</div>
-        <div>
-          <h1 id="profile-name">PlayerName</h1>
-          <p id="profile-bio">A classic tuner builder.</p>
-        </div>
-      </div>
-
-      <div class="box">
-        <h3>Places by Player</h3>
-        <div id="profile-places" class="grid-places"></div>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year6"></span> TunerBLOX. Inspired by Roblox (2008).</div>
-  </footer>
-
-  <script src="script.js"></script>
-</body>
-</html>
-
-
-<!-- FILE: place.html -->
-<!doctype html>
-<html lang="en">
-<head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>TunerBLOX — Place</title>
-  <link rel="stylesheet" href="style.css">
-</head>
-<body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
-  </header>
-
-  <main class="container singlecol">
-    <section class="box full-list place-page">
-      <div class="place-header">
-        <img id="place-thumb" src="assets/placeholder.png" alt="thumbnail" class="place-thumb">
-        <div class="place-meta">
-          <h1 id="place-title">Place Title</h1>
-          <p id="place-creator">by <a href="#">CreatorName</a></p>
-          <p id="place-desc">This is a sample description. Replace with real place data.</p>
-          <button class="btn" id="play-btn">Play</button>
-        </div>
-      </div>
-
-      <div class="box">
-        <h3>Comments</h3>
-        <p>Forum-style comments placeholder.</p>
-      </div>
-    </section>
-  </main>
-
-  <footer class="footer">
-    <div>© <span id="year7"></span> TunerBLOX. Inspired by Roblox (2008).</div>
+  <footer class="site-footer">
+    <div>© <span id="year"></span> TunerBLOX — Inspired by Roblox (2016 look)</div>
   </footer>
 
   <script src="script.js"></script>
