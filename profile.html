@@ -1,42 +1,44 @@
 <!doctype html>
 <html lang="en">
 <head>
-  <meta charset="utf-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>TunerBLOX — Profile</title>
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="topbar">
-    <div class="brand"><div class="logo">TunerBLOX</div></div>
-    <nav class="nav">
-      <a href="index.html" class="nav-link">Home</a>
-      <a href="games.html" class="nav-link">Games</a>
-      <a href="users.html" class="nav-link">Users</a>
-      <a href="forums.html" class="nav-link">Forums</a>
-      <a href="signup.html" class="nav-link">Sign Up</a>
-    </nav>
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="index.html" class="brand"><img src="assets/logo.png" class="logo-img"></a>
+      <nav class="main-nav">
+        <a href="index.html">Home</a>
+        <a href="games.html">Games</a>
+        <a href="users.html">People</a>
+        <a href="forums.html">Forum</a>
+        <a href="login.html" id="login-top" class="login-toggle">Login</a>
+        <a href="signup.html">Sign Up</a>
+      </nav>
+    </div>
   </header>
 
-  <main class="container singlecol">
-    <section class="box full-list profile">
-      <div class="profile-header">
+  <main class="container single">
+    <section class="box profile">
+      <div class="profile-top">
         <div class="avatar big">AV</div>
         <div>
           <h1 id="profile-name">PlayerName</h1>
-          <p id="profile-bio">A classic tuner builder.</p>
+          <p id="profile-bio">Bio</p>
         </div>
       </div>
 
       <div class="box">
-        <h3>Places by Player</h3>
-        <div id="profile-places" class="grid-places"></div>
+        <h3>Places by player</h3>
+        <div id="profile-places" class="grid-tiles"></div>
       </div>
     </section>
   </main>
 
-  <footer class="footer">
-    <div>© <span id="year6"></span> TunerBLOX. Inspired by Roblox (2008).</div>
+  <footer class="site-footer">
+    <div>© <span id="year8"></span> TunerBLOX</div>
   </footer>
 
   <script src="script.js"></script>
