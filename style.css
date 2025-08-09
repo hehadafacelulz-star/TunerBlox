@@ -1,110 +1,44 @@
-/* Retro 2008 Roblox-inspired styles */
-:root{
-  --blue1:#0055a4; --blue2:#0077cc; --bg:#f2f4f7; --box:#ffffff; --muted:#777;
-}
-*{box-sizing:border-box}
-body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);margin:0;color:#222}
-.topbar{display:flex;align-items:center;gap:20px;padding:12px 18px;background:linear-gradient(180deg,var(--blue1),var(--blue2));color:white}
+/* 2016-inspired TunerBLOX stylesheet (compact) */
+:root{ --blue:#2c77c6; --dark:#1b3f7a; --muted:#666; --bg:#f3f5f7; --card:#fff; }
+*{box-sizing:border-box} body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);margin:0;color:#111}
+.site-header{background:linear-gradient(#2f7bd6,#1f5fb0);padding:10px 0;box-shadow:0 2px 0 rgba(0,0,0,.1)}
+.header-inner{max-width:1000px;margin:0 auto;display:flex;align-items:center;gap:20px;padding:0 12px}
 .brand{display:flex;align-items:center}
-.logo{font-weight:900;font-size:28px;letter-spacing:1px;background:#e74c3c;padding:6px 10px;border-radius:3px;box-shadow:0 1px 0 rgba(0,0,0,.2);}
-.nav{display:flex;gap:8px}
-.nav-link{background:rgba(255,255,255,.12);padding:6px 10px;border-radius:4px;color:white;text-decoration:none;font-weight:bold}
-.nav-link:hover{background:rgba(255,255,255,.2)}
-.nav-link.active{background:#fff;color:var(--blue1)}
-.search-wrap{margin-left:auto}
-.search-wrap input{padding:6px 8px;border-radius:3px;border:1px solid #ccc}
-.container{display:flex;gap:18px;max-width:1100px;margin:18px auto;padding:0 12px}
-.leftcol{width:320px}
-.rightcol{width:260px}
-.maincol{flex:1}
-.box{background:var(--box);padding:12px;border:1px solid #dcdcdc;border-radius:4px;margin-bottom:12px}
-h1,h2,h3{margin:0 0 8px}
-.grid-places{display:grid;grid-template-columns:repeat(2,1fr);gap:8px}
-.places-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
-.place-card{border:1px solid #d0d0d0;padding:6px;background:#fff}
+.logo-img{height:44px}
+.main-nav{margin-left:auto;display:flex;gap:10px;align-items:center}
+.main-nav a{color:#fff;text-decoration:none;padding:8px 10px;background:rgba(255,255,255,.07);border-radius:3px;font-weight:700}
+.main-nav a.active{background:#fff;color:var(--dark)}
+.hero{max-width:1000px;margin:18px auto;display:flex;gap:18px;padding:0 12px}
+.hero-left{flex:1}
+.hero-right{width:300px}
+.container{max-width:1000px;margin:12px auto;padding:0 12px}
+.box{background:var(--card);padding:12px;border-radius:3px;border:1px solid #ddd;margin-bottom:12px}
+.wide{padding:14px}
+.small{padding:8px}
+.narrow{max-width:520px;margin:0 auto}
+.center{text-align:center}
+.login-box input, input, textarea{display:block;width:100%;padding:7px;margin:6px 0;border:1px solid #ccc;border-radius:3px}
+.btn{background:linear-gradient(#fff,#eee);border:1px solid #999;padding:6px 10px;border-radius:3px;cursor:pointer}
+.grid-tiles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.grid-list{display:grid;grid-template-columns:repeat(auto-fill,minmax(220px,1fr));gap:12px}
+.place-card{border:1px solid #ddd;padding:8px;background:#fff}
 .place-card img{width:100%;height:120px;object-fit:cover}
-.btn{background:linear-gradient(#fff,#eee);border:1px solid #999;padding:6px 10px;border-radius:4px;cursor:pointer}
-.login-box input, .box input{width:100%;padding:6px;margin:6px 0;border:1px solid #ccc;border-radius:3px}
-footer.footer{max-width:1100px;margin:12px auto;padding:8px 12px;color:var(--muted)}
-.singlecol .container{max-width:1000px}
-.profile-header{display:flex;gap:12px;align-items:center}
-.avatar.big{width:96px;height:96px;background:#e0e0e0;border-radius:6px;display:flex;align-items:center;justify-content:center;font-weight:bold}
-.place-thumb{width:220px;height:140px;object-fit:cover;border:1px solid #ccc}
-.user-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:12px}
+.user-grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px}
+.avatar{width:48px;height:48px;background:#eee;border-radius:4px;display:inline-flex;align-items:center;justify-content:center;font-weight:bold}
+.avatar.big{width:120px;height:120px;font-size:28px;border-radius:6px}
+.place-thumb{width:100%;height:240px;object-fit:cover}
+.place-grid{display:flex;gap:18px}
+.place-left{flex:1}
+.place-right{width:320px}
+.avatar-row{display:flex;gap:8px;flex-wrap:wrap}
+.muted{color:var(--muted);font-size:13px}
+.site-footer{max-width:1000px;margin:12px auto;padding:8px 12px;color:var(--muted);text-align:center}
 
-/* small responsive tweaks */
-@media (max-width:900px){.container{flex-direction:column;padding:8px}.leftcol,.rightcol{width:100%}}
-
-
-<!-- FILE: script.js -->
-// Minimal JS for demo and placeholders. Replace endpoints with your backend as needed.
-const samplePlaces = [
-  {id:1,title:"Midnight Drifts",thumb:"assets/park1.jpg",creator:"DriftKing",players:24,desc:"A big map for drifting."},
-  {id:2,title:"Street Tuner Show",thumb:"assets/park2.jpg",creator:"AutoExpo",players:12,desc:"Show off your tuned car."},
-  {id:3,title:"Tune Garage",thumb:"assets/park3.jpg",creator:"Wrench",players:8,desc:"Customize parts & paint."},
-  {id:4,title:"City Circuit",thumb:"assets/park4.jpg",creator:"SpeedLab",players:16,desc:"Race through the city."}
-];
-
-const sampleNews = [
-  {date:'Aug 1, 2025',title:'Launch: TunerBLOX Open Alpha',body:'We launched alpha with classic tuning gameplay.'},
-  {date:'Jul 25, 2025',title:'Server Maintenance',body:'Planned maintenance tonight 02:00 UTC.'}
-];
-
-const sampleUsers = [
-  {name:'PlayerOne',avatar:'AV',bio:'Tuner & builder'},
-  {name:'DRFT_23',avatar:'DF',bio:'Drift specialist'},
-  {name:'ModJane',avatar:'MJ',bio:'Community mod'}
-];
-
-function onReady(){
-  // year
-  document.querySelectorAll('[id^="year"]').forEach(el=>el.textContent=new Date().getFullYear());
-  // populate news
-  const newsList = document.getElementById('news-list');
-  if(newsList){ sampleNews.forEach(n=>{ const d=document.createElement('div'); d.className='news-item'; d.innerHTML=`<strong>${n.date}</strong><h4>${n.title}</h4><p>${n.body}</p>`; newsList.appendChild(d) }) }
-
-  // featured and games
-  const featured = document.getElementById('featured-list');
-  const gamesList = document.getElementById('games-list');
-  const allPlaces = document.getElementById('all-places');
-  const profilePlaces = document.getElementById('profile-places');
-
-  function makeCard(p){
-    const el=document.createElement('div'); el.className='place-card';
-    el.innerHTML = `<img src="${p.thumb||'assets/placeholder.png'}" alt="thumb"><strong>${p.title}</strong><div class="muted">by ${p.creator} • ${p.players} online</div><div style="margin-top:6px"><a class="btn" href="place.html?id=${p.id}">Play</a></div>`;
-    return el;
-  }
-
-  if(featured) samplePlaces.slice(0,2).forEach(p=>featured.appendChild(makeCard(p)));
-  if(gamesList) samplePlaces.forEach(p=>gamesList.appendChild(makeCard(p)));
-  if(allPlaces) samplePlaces.forEach(p=>allPlaces.appendChild(makeCard(p)));
-  if(profilePlaces) samplePlaces.slice(0,3).forEach(p=>profilePlaces.appendChild(makeCard(p)));
-
-  // user list
-  const userList = document.getElementById('user-list');
-  if(userList) sampleUsers.forEach(u=>{ const el=document.createElement('div'); el.className='box'; el.innerHTML=`<div style="display:flex;gap:8px;align-items:center"><div class="avatar">${u.avatar}</div><div><strong>${u.name}</strong><div class="muted">${u.bio}</div></div></div>`; userList.appendChild(el) });
-
-  // stats (simulated). Replace with live API calls.
-  const pc = document.getElementById('player-count'); if(pc) pc.textContent = (Math.floor(Math.random()*200)+20);
-  const plc = document.getElementById('place-count'); if(plc) plc.textContent = samplePlaces.length;
-
-  // sign-up admin toggle
-  const urlParams = new URLSearchParams(window.location.search);
-  if(urlParams.get('admin') === 'ROBLOX'){
-    const f = document.getElementById('signup-form'); if(f) f.style.display='block';
-    const msg = document.querySelector('#signup-block p'); if(msg) msg.style.display='none';
-  }
-
-  // basic login handling (placeholder)
-  const loginForm = document.getElementById('login-form');
-  if(loginForm) loginForm.addEventListener('submit', e=>{ e.preventDefault(); alert('Login attempted — wire to your backend.'); });
-
-  const signupForm = document.getElementById('signup-form');
-  if(signupForm) signupForm.addEventListener('submit', e=>{ e.preventDefault(); alert('Create account (admin only) — wire to backend.'); });
+/* responsive */
+@media (max-width:900px){
+  .header-inner,.hero,.container{padding:0 10px}
+  .hero{flex-direction:column}
+  .hero-right{width:100%}
+  .grid-tiles{grid-template-columns:repeat(2,1fr)}
+  .logo-img{height:36px}
 }
-
-window.addEventListener('DOMContentLoaded', onReady);
-
-// TODO: Replace sample arrays with fetch("/api/places") calls and handle auth tokens.
-
-
